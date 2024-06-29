@@ -2,6 +2,10 @@
 
 This is a simple training management system built with TypeScript. The application allows you to manage courses, companies, and students with an intuitive drag and drop functionality.
 
+## Demo
+
+Check out the live demo [here](https://includo-typescript.netlify.app/).
+
 ## Features
 
 - **Course Management**: Create and manage courses.
