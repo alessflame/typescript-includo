@@ -14,13 +14,13 @@ This is a simple training management system built with TypeScript. The applicati
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/yourusername/training-management-system.git
+    git clone https://github.com/alessflame/typescript-includo.git
     ```
 
 2. Navigate to the project directory:
 
     ```sh
-    cd training-management-system
+    cd typescript-includo
     ```
 
 3. Install the dependencies:
@@ -29,11 +29,17 @@ This is a simple training management system built with TypeScript. The applicati
     npm install
     ```
 
-4. Start the development server:
+4. build app:
 
     ```sh
-    npm start
+    npm run build
     ```
+
+5. Usage:
+
+    - Open `index.html` in your browser, or
+    - Use the Live Server extension in VSCode to serve the project.
+
 
 ## License
 
