@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INCLUDO</title>
+  <link rel="icon" type="image/x-icon" href="./dist/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <h1>INCLUDO</h1>
+    <nav>
+      <ul>
+        <li><a href="#corsi">Corsi</a></li>
+        <li><a href="#aziende">Aziende</a></li>
+        <li><a href="#studenti">Studenti</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="corsi">
+      <h2>Corsi di Formazione</h2>
+      <button class="add-button" id="addCorsoBtn"><i class="fas fa-plus"></i> Aggiungi Corso</button>
+      <div id="corsiContainer" class="card-container"></div>
+    </section>
+    <section id="aziende">
+      <h2>Aziende Partner</h2>
+      <button class="add-button" id="addAziendaBtn"><i class="fas fa-plus"></i> Aggiungi Azienda</button>
+      <div id="aziendeContainer" class="card-container"></div>
+    </section>
+    <section id="studenti">
+      <h2>Studenti</h2>
+      <button class="add-button" id="addStudenteBtn"><i class="fas fa-plus"></i> Aggiungi Studente</button>
+      <div id="studentiContainer" class="card-container"></div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Scuola di Formazione per Migranti. Tutti i diritti riservati.</p>
+  </footer>
+
+  <!-- Modale per assegnare posizione lavorativa -->
+  <div id="posizioneModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closePosizioneModal">&times;</span>
+      <h2>Assegna Posizione Lavorativa</h2>
+      <form id="posizioneForm">
+        <label for="posizioneSelezionata">Seleziona Posizione</label>
+        <select id="posizioneSelezionata" name="posizioneSelezionata" required>
+
+        </select>
+        <button type="submit">Assegna</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modale per confermare l'assegnazione della posizione -->
+  <div id="confermaModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeConfermaModal">&times;</span>
+      <h2>Conferma Assegnazione</h2>
+      <p id="confermaMessaggio"></p>
+      <!-- <button id="confermaButton">OK</button> -->
+    </div>
+  </div>
+
+
+
+  <!-- Modale per aggiungere corso -->
+  <div id="corsoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeCorsoModal">&times;</span>
+      <h2>Aggiungi Corso</h2>
+      <form id="corsoForm">
+        <label for="corsoTitolo">Titolo</label>
+        <input type="text" id="corsoTitolo" name="corsoTitolo" required>
+
+        <label for="corsoDescrizione">Descrizione</label>
+        <textarea id="corsoDescrizione" name="corsoDescrizione" required></textarea>
+
+        <label for="corsoSettore">Settore</label>
+        <input type="text" id="corsoSettore" name="corsoSettore" required>
+
+        <label for="corsoDurata">Durata (ore)</label>
+        <input type="number" id="corsoDurata" name="corsoDurata" required>
+
+        <button type="submit">Aggiungi</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modale per aggiungere azienda -->
+  <div id="aziendaModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeAziendaModal">&times;</span>
+      <h2>Aggiungi Azienda</h2>
+      <form id="aziendaForm">
+        <label for="aziendaNome">Nome</label>
+        <input type="text" id="aziendaNome" name="aziendaNome" required>
+
+        <label for="aziendaSettore">Settore</label>
+        <input type="text" id="aziendaSettore" name="aziendaSettore" required>
+
+        <label for="aziendaDescrizione">Descrizione</label>
+        <textarea id="aziendaDescrizione" name="aziendaDescrizione" required></textarea>
+
+        <label for="aziendaPosizioni">Posizioni Aperte (separate da ',')</label>
+        <input type="text" id="aziendaPosizioni" name="aziendaPosizioni" required>
+
+        <button type="submit">Aggiungi</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modale per aggiungere studente -->
+  <div id="studenteModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeStudenteModal">&times;</span>
+      <h2>Aggiungi Studente</h2>
+      <form id="studenteForm">
+        <label for="studenteNome">Nome</label>
+        <input type="text" id="studenteNome" name="studenteNome" required>
+
+        <label for="studenteCognome">Cognome</label>
+        <input type="text" id="studenteCognome" name="studenteCognome" required>
+
+        <label for="studenteAmbito">Ambito</label>
+        <input type="text" id="studenteAmbito" name="studenteAmbito" required>
+
+        <label for="studentePaese">Paese</label>
+        <input type="text" id="studentePaese" name="studentePaese" required>
+
+        <label for="studenteIstruzione">Istruzione</label>
+        <input type="text" id="studenteIstruzione" name="studenteIstruzione" required>
+
+        <label for="studenteCorso">Corso</label>
+        <input type="text" id="studenteCorso" name="studenteCorso" required>
+
+        <label for="studenteCompetenze">Lingue (separate da ',')</label>
+        <input type="text" id="studenteCompetenze" name="studenteCompetenze" required>
+
+        <button type="submit">Aggiungi</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modale per assegnare posizione lavorativa -->
+  <div id="posizioneModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closePosizioneModal">&times;</span>
+      <h2>Assegna Posizione Lavorativa</h2>
+      <form id="posizioneForm">
+        <label for="posizioneSelezionata">Seleziona Posizione</label>
+        <select id="posizioneSelezionata" name="posizioneSelezionata" required>
+
+        </select>
+        <button type="submit">Assegna</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="dist/bundle.js"></script>
+</body>
+
+</html>
